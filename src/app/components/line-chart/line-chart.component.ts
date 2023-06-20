@@ -2,6 +2,7 @@ import { Component, ViewChild, Input, OnInit, AfterViewInit } from '@angular/cor
 import { multi } from './data';
 import {Color, LegendPosition, ScaleType} from "@swimlane/ngx-charts";
 import {single} from "rxjs/operators";
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -23,24 +24,25 @@ export class LineChartComponent implements OnInit, AfterViewInit{
   @Input() lineChartData: any[] = [];
   @Input() showLegend: boolean = true;
   @Input() showLabels: boolean = true;
+  @Input() showXAxisLabel: boolean = false;
+  @Input() showYAxisLabel: boolean = false;
+  @Input() yAxisLabel: string = '';
+  @Input() xAxisLabel: string = '';
 
   // options
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Time';
-  yAxisLabel: string = 'Weight';
-  timeline: boolean = true;
+  // animations: boolean = true;
+  // xAxis: boolean = true;
+  // yAxis: boolean = true;
+  // timeline: boolean = true;
 
 
-  constructor() {
+  constructor(private dataService: DataService) {
     // Object.assign(this, { single });
     Object.assign(this, { multi });
   }
 
   ngOnInit(): void {
+    // this.initData();
   }
 
   ngAfterViewInit(): void {
@@ -56,5 +58,9 @@ export class LineChartComponent implements OnInit, AfterViewInit{
     let color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + color).slice(-6);
   }
+
+  // private async initData(){
+  //    this.dataService.getData().subscribe((response) => )
+  // }
 
 }

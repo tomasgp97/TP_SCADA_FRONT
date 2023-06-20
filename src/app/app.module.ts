@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LineChartComponent } from 'src/app/components/line-chart/line-chart.component'
-
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { LineChartComponent } from 'src/app/components/line-chart/line-chart.com
     AppRoutingModule,
     NgxChartsModule,
     BrowserAnimationsModule,
+    HttpClientModule
 
   ],
   providers: [],
