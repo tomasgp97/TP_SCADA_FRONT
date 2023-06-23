@@ -1,4 +1,4 @@
-<ngx-charts-line-chart
+<!-- <ngx-charts-line-chart
 *ngIf="lineChartData.length > 0"
   [view]="view"
   [scheme]="colorScheme"
@@ -13,7 +13,20 @@
   [results]="lineChartData"
 
   >
-</ngx-charts-line-chart>
+</ngx-charts-line-chart> -->
+<ngx-charts-line-chart
+*ngIf="lineChartData.length > 0"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="lineChartData"
+  [legend]="showLegend"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+></ngx-charts-line-chart>
 
 <!-- (select)="onSelect($event)"
 (activate)="onActivate($event)"

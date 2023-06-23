@@ -3,6 +3,8 @@ export var multi = [
   	{ name: 'B', value: 20 },
   	{ name: 'C', value: 15 },
 ];
+
+export var backendUrl = 'localhost:5000'
 //   {
 // 		_id: "648b5a29ba990a06168a1343",
 // 		timestamp: "03:36:25",
